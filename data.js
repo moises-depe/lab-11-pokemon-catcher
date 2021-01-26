@@ -1,7 +1,7 @@
 /* eslint-disable */
 
-export default [
-    {
+export const pokemon = [
+   {
        '_id':'5cef3501ef6005a77cd4fd17',
        'pokemon':'bulbasaur',
        'id':1,
