@@ -1,8 +1,9 @@
 import { findById } from './utils.js';
 
+
 const POKESTATS = 'POKESTATS';
 
-export function getPokeStats() { 
+export function getPokeStats() {
     let stats = JSON.parse(localStorage.getItem(POKESTATS));
 
     if (!stats) {
@@ -10,7 +11,7 @@ export function getPokeStats() {
         localStorage.setItem(POKESTATS, JSON.stringify(stats));
     }
 
-    return stats; 
+    return stats;
 }
 
 export function setPokeStats(newStats) {
@@ -23,6 +24,9 @@ export function incrementSeen(_id) {
     const poke = findById(stats, _id);
 
     if (!poke) {
+
+
+
         const newStat = {
             _id: _id,
             seen: 1,
@@ -30,6 +34,7 @@ export function incrementSeen(_id) {
         };
 
         stats.push(newStat);
+
     } else {
 
         poke.seen++;
@@ -40,8 +45,6 @@ export function incrementSeen(_id) {
 
 export function incrementCaught(_id) {
     const stats = getPokeStats();
-
-
     const poke = findById(stats, _id);
 
     poke.caught++;

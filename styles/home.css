@@ -1,0 +1,21 @@
+img {
+  width: 25%;
+  height: 29%;
+  position: relative;
+  left: 100px;
+  bottom: -150px;
+}
+
+.poke-img {
+  cursor: pointer;
+  transition: .2s ease-in-out
+}
+
+.poke-img:hover {
+  transform: scale(1.2) rotate(2deg);
+}
+
+body {
+
+  background-color: goldenrod;
+}

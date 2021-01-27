@@ -9,16 +9,14 @@ export function getRandomPokemon() {
     return pokemon[randomIndex];
 }
 
-export function findById(someArray, someId) {
-    for (let i = 0; i < someArray.length; i++) {
-        const item = someArray[i];
-        if (item.id === someId) {
+export function findById(array, id) {
+    for (let item of array) {
+        if (item._id === id)
             return item;
-        }
     }
-} 
+}
 
-export function setThreePokemon() { 
+export function setThreePokemon() {
     numberOfTurns++;
 
     let randomPokeOne = getRandomPokemon();
@@ -29,7 +27,7 @@ export function setThreePokemon() {
     while (randomPokeOne._id === randomPokeTwo._id || randomPokeOne._id === randomPokeThree._id || randomPokeTwo._id === randomPokeThree._id) {
         randomPokeOne = getRandomPokemon();
         randomPokeTwo = getRandomPokemon();
-        randomPokeThree = getRandomPokemon();  
+        randomPokeThree = getRandomPokemon();
     }
 
     const img1 = renderPokeImage(randomPokeOne);
@@ -64,5 +62,5 @@ export function renderPokeImage(pokemonItem) {
     });
 
     return image;
-    
+
 }
